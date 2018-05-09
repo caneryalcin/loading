@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     RingProgressBar ringProgressBar;
     EditText  editText;
     Button button;
-    SeekBar seekBar;
+
 
 
     int progress = 0;
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         editText = findViewById(R.id.edittext);
         button = findViewById(R.id.button);
-        seekBar = findViewById(R.id.seekBar);
+        //butona tıklandığında yapılacak işlemler.
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
