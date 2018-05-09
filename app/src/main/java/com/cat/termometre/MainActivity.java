@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 
-
+//gradle(Project) ve gradle(app) 'da eklentiler mevcuttur.
 public class MainActivity extends AppCompatActivity {
 
     RingProgressBar ringProgressBar;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             if(msg.what == 0){
 
-                        ringProgressBar.setProgress(progress);
+                ringProgressBar.setProgress(progress);
 
             }
         }
