@@ -23,22 +23,20 @@ public class MainActivity extends AppCompatActivity {
     RingProgressBar ringProgressBar;
     EditText  editText;
     Button button;
+    SeekBar seekBar;
+
 
     int progress = 0;
 
 
+    //Handler view'e ulaşarak ringprogressbar'ın değerini değiştirir.
     Handler myHandler = new Handler(){
 
         @Override
         public void handleMessage(Message msg) {
             if(msg.what == 0){
 
-                if(progress<100){
-
-                    ringProgressBar.setProgress(progress);
-
-
-                }
+                        ringProgressBar.setProgress(progress);
 
             }
         }
@@ -53,34 +51,43 @@ public class MainActivity extends AppCompatActivity {
 
         editText = findViewById(R.id.edittext);
         button = findViewById(R.id.button);
+        seekBar = findViewById(R.id.seekBar);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 progress = Integer.parseInt(editText.getText().toString());
-
+                ringProcess();
 
             }
         });
+
+    }
+
+
+
+    public void ringProcess(){
+        //ringProgressBar %100 olduğunda tost mesajı gelir.
         ringProgressBar.setOnProgressListener(new RingProgressBar.OnProgressListener() {
             @Override
             public void progressToComplete() {
 
-                Toast.makeText(MainActivity.this, "Comlpleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Completed", Toast.LENGTH_SHORT).show();
 
             }
         });
 
 
-        new Thread(new Runnable() {
+        //Handler'ı thread yoluyla çağrılarak sendEmptyMessage ile yapılmak istenen değişiklikler yapılır.
+        new Thread( new Runnable() {
             @Override
             public void run() {
 
                 for(int i = 0; i<100;i++){
 
                     try{
-                    Thread.sleep(100);
-                    myHandler.sendEmptyMessage(0);
+                        Thread.sleep(100);
+                        myHandler.sendEmptyMessage(0);
                     }catch (InterruptedException e){
                         e.printStackTrace();
                     }
@@ -90,9 +97,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }).start();
-
-
-
 
     }
 }
