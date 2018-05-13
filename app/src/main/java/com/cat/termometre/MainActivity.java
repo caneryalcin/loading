@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 
-//gradle(Project) ve gradle(app) 'da eklentiler mevcuttur.
+//gradle(Project) ve gradle(app) 'da eklentiler mevcuttur...
 public class MainActivity extends AppCompatActivity {
 
     RingProgressBar ringProgressBar;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     int progress = 0;
 
 
-    //Handler view'e ulaşarak ringprogressbar'ın değerini değiştirir.
+    //Handler view'e ulaşarak ringprogressbar'ın değerini değiştirir...
     Handler myHandler = new Handler(){
 
         @Override
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         editText = findViewById(R.id.edittext);
         button = findViewById(R.id.button);
-        //butona tıklandığında yapılacak işlemler.
+        //butona tıklandığında yapılacak işlemler...
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void ringProcess(){
-        //ringProgressBar %100 olduğunda tost mesajı gelir.
+        //ringProgressBar %100 olduğunda tost mesajı gelir...
         ringProgressBar.setOnProgressListener(new RingProgressBar.OnProgressListener() {
             @Override
             public void progressToComplete() {
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //Handler'ı thread yoluyla çağrılarak sendEmptyMessage ile yapılmak istenen değişiklikler yapılır.
+        //Handler'ı thread yoluyla çağrılarak sendEmptyMessage ile yapılmak istenen değişiklikler yapılır...
         new Thread( new Runnable() {
             @Override
             public void run() {
