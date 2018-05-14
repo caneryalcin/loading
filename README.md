@@ -6,6 +6,9 @@ Aşağıdaki eklentileri ekleyelim...
 
 ## build.gradle(Project:termometre)
 
+![](https://thumbs.gfycat.com/ExaltedGranularGoral-small.gif)
+
+
 allprojects {
     
     repositories {
@@ -19,12 +22,10 @@ allprojects {
     }
 }
 
-![](https://thumbs.gfycat.com/ExaltedGranularGoral-small.gif)
 
 
 
 ## build.grade(Module:app)
-
 
 implementation 'com.github.HotBitmapGG:RingProgressBar:V1.2.2'
 
